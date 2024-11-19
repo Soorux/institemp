@@ -754,7 +754,7 @@ strong {
 }
 
 .blockquote::before {
-  content: "“";
+  content: none;
   color: var(--custom-btn-bg-color);
   font-size: 100px;
   line-height: 1rem;
