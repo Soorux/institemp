@@ -1050,4 +1050,29 @@ strong {
     padding: 5px 15px;
   }
 }
+.ods-image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ods-image-container img {
+  width: 150px; /* Ajusta según el tamaño deseado */
+  height: 150px; /* Ajusta según el tamaño deseado */
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ods-image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+.scrollspy-example-item-image {
+  width: 100%;   /* Asegura que ambas imágenes ocupen el 100% del contenedor */
+  height: 100%;  /* Iguala la altura de ambas imágenes */
+  object-fit: cover;  /* Mantiene la proporción de las imágenes sin deformarlas */
+}
 
