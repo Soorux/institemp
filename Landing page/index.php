@@ -150,9 +150,12 @@ https://templatemo.com/tm-588-ebook-landing
             <section class="book-section section-padding" id="section_2">
                 <div class="container">
                     <div class="row">
+             
 
                         <div class="col-lg-6 col-12">
-                            <img src="images/tablet-screen-contents.jpg" class="img-fluid" alt="">
+                            <div style="margin-top: 100px;">
+                                <img src="images/tablet-screen-contents.jpg" class="img-fluid" alt="">
+                            </div>
                         </div>
 
                         <div class="col-lg-6 col-12">
@@ -252,7 +255,7 @@ https://templatemo.com/tm-588-ebook-landing
                                     
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 col-12">
-                                            <img src="images/tablet-screen-contents.jpg" class="img-fluid" alt="">
+                                            <img src="images/eficiencia.jpg" class="img-fluid" alt="">
                                         </div>
 
                                         <div class="col-lg-6 col-12">
@@ -529,7 +532,7 @@ https://templatemo.com/tm-588-ebook-landing
                                         <i class="bi-star-fill"></i>
                                     </div>
 
-                                    <p class="mb-0">Excelente plataforma para monitorear las condiciones ambientales. La integración con los sensores es perfecta, y las predicciones de temperatura y humedad son muy precisas. Solo me gustaría que tuviera más opciones de personalización, pero aún así es increíble.</p>
+                                    <p class="mb-0">Excelente para monitorear las condiciones ambientales. La integración con los sensores es perfecta, y las predicciones de temperatura y humedad son precisas. Me gustaría que tuviera más opciones de personalización.</p>
                                 </div>
                             </div>
                         </div>
@@ -543,42 +546,45 @@ https://templatemo.com/tm-588-ebook-landing
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form ebook-download-form bg-white shadow" action="mailer.php" method="get" role="form">
-                                <div class="text-center mb-5">
-                                    <h2 class="mb-1">¿Estás interesado?</h2>
-                                </div>
-                        
-                                <div class="ebook-download-form-body">
-									<a name="interesado">
-									
-                                    <div class="input-group mb-4">
-                                        <input type="text" name="nombre" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby="basic-addon1" placeholder="Tu Nombre" required>
-                                        <span class="input-group-text" id="basic-addon1">
-                                            <i class="custom-form-icon bi-person"></i>
-                                        </span>
+                    <div class="col-lg-5 col-12 custom-form-container">
+                        <form class="custom-form ebook-download-form bg-white shadow" action="mailer.php" method="get" role="form">
+                                    <div class="text-center mb-5">
+                                        <h2 class="mb-1">¿Estás interesado?</h2>
                                     </div>
-                        
-                                    <div class="input-group mb-4">
-                                        <input type="email" name="email" id="ebook-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="correo_ejemplo@gmail.com" aria-label="ebook-form-email" aria-describedby="basic-addon2" required="">
-                                        <span class="input-group-text" id="basic-addon2">
-                                            <i class="custom-form-icon bi-envelope"></i>
-                                        </span>
+                            
+                                    <div class="ebook-download-form-body">
+                                        <a name="interesado">
+                                        
+                                        <div class="input-group mb-4">
+                                            <input type="text" name="nombre" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby="basic-addon1" placeholder="Tu Nombre" required>
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="custom-form-icon bi-person"></i>
+                                            </span>
+                                        </div>
+                            
+                                        <div class="input-group mb-4">
+                                            <input type="email" name="email" id="ebook-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="correo_ejemplo@gmail.com" aria-label="ebook-form-email" aria-describedby="basic-addon2" required="">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="custom-form-icon bi-envelope"></i>
+                                            </span>
+                                        </div>
+                            
+                                        <div class="col-lg-8 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Más información</button>
+                                        </div>
+                                        
                                     </div>
+                                </form>
+                    </div>
                         
-                                    <div class="col-lg-8 col-md-10 col-8 mx-auto">
-                                        <button type="submit" class="form-control">Más información</button>
-                                    </div>
-									
-                                </div>
-                            </form>
-                        </div>
+                            
                         
+                        <br>
 
                         <div class="col-lg-6 col-12">
-                            <h6 class="mt-5">Say hi and talk to us</h6>
+                            
 
-                            <h2 class="mb-4">Contact</h2>
+                            <h2 class="mb-4">Contacto</h2>
 
                             <p class="mb-3">
                                 <i class="bi-geo-alt me-2"></i>
@@ -601,11 +607,11 @@ https://templatemo.com/tm-588-ebook-landing
 
                             <ul class="social-icon mb-4">
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                    <a href="https://www.instagram.com/saul.gr_12/" class="social-icon-link bi-instagram"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                    <a href="https://x.com/Soorux" class="social-icon-link bi-twitter"></a>
                                 </li>
                                 
                                 <li class="social-icon-item">
