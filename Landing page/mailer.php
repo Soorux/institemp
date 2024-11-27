@@ -6,6 +6,8 @@ require 'PHPMailer/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 // Configuración de la conexión a la base de datos
 $servername = "localhost";  // Cambia esto si tu base de datos no está en localhost
 $username = "root";        // Cambia esto con tu nombre de usuario de MySQL
@@ -43,28 +45,39 @@ try {
     $mail->AltBody = 'Este es el texto alternativo para clientes que no soportan HTML.';
 
     // Enviar el correo
-    if ($mail->send()) {
-        // Si el correo se envía correctamente, inserta los datos en la base de datos
-        $nombre = $_GET['nombre'];
-        $email = $_GET['email'];
-
-        $sql = "INSERT INTO suscriptores (nombre, email) VALUES ('$nombre', '$email')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "Correo enviado y datos guardados correctamente.";
-        } else {
-            echo "Error al guardar los datos en la base de datos: " . $conn->error;
-        }
-
-        // Redirigir después de enviar el correo
-        header('Location: index.php#interesado');
-    } else {
-        echo "Error al enviar el correo: {$mail->ErrorInfo}";
-    }
-
+    $mail->send();
 } catch (Exception $e) {
     echo "Error al enviar el correo: {$mail->ErrorInfo}";
 }
+
+try {
+    // Si el correo se envía correctamente, inserta los datos en la base de datos
+    $nombre = $_GET['nombre'];
+    $email = $_GET['email'];
+
+    // Usar consultas preparadas para prevenir inyecciones SQL
+    $stmt = $conn->prepare("INSERT INTO suscriptores (nombre, email) VALUES (?, ?)");
+    $stmt->bind_param("ss", $nombre, $email);
+
+    // Intentar ejecutar la consulta
+    $stmt->execute();
+    echo "Correo enviado y datos guardados correctamente.";
+    
+    // Cerrar la declaración
+    $stmt->close();
+} catch (mysqli_sql_exception $e) {
+    // Capturar excepciones de MySQL
+    if ($e->getCode() === 1062) { // Código de error para duplicados
+        echo "Este correo electrónico ya está registrado.";
+    } else {
+        echo "Error al registrar el dato: " . $e->getMessage();
+    }
+} catch (Exception $e) {
+    // Capturar otras excepciones generales
+    echo "Error al registrar el dato: " . $e->getMessage();
+}
+
+header('Location: index.php#interesado');
 
 // Cerrar la conexión a la base de datos
 $conn->close();
